@@ -1,0 +1,44 @@
+/* anim 3 */
+
+.b3 .lines:nth-child(1),
+.lines:nth-child(3) {
+    transform: rotate(0deg);
+    transition:
+        transform 0.4s ease-in-out,
+        top 0.4s 0.4s ease-in-out;
+}
+
+.b3 .lines:nth-child(2) {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.b3.active .lines:nth-child(1) {
+    top: 25px;
+    transform: rotate(45deg);
+    transition:
+        top 0.4s ease-in-out,
+        transform 0.4s 0.4s ease-in-out;
+}
+
+.b3.active .lines:nth-child(2) {
+    transition: opacity 0.4s 0.4s ease-in-out;
+    opacity: 0;
+
+}
+
+.b3.active .lines:nth-child(3) {
+    top: 25px;
+    transform: rotate(-45deg);
+    transition:
+        top 0.4s ease-in-out,
+        transform 0.4s 0.4s ease-in-out;
+}
+
+.b3 .container-lines {
+    transition: transform 0.4s ease-in-out;
+}
+
+.b3.active .container-lines {
+    transition: transform 0.4s 0.4s ease-in-out;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
