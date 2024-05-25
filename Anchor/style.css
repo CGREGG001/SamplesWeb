@@ -8,7 +8,8 @@
 }
 
 body {
-    background-color: #f1f1f1;
+    background-image: linear-gradient(37deg, rgb(32, 218, 233),rgb(40, 21, 236));
+    color: #f1f1f1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +19,7 @@ body {
 }
 
 a {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 /* ---------------------------------------- */
@@ -27,17 +28,19 @@ a {
 
 .slide-line {
     font-family: 'Roboto', sans-serif;
-    font-size: 40px;
-    color: #333;
+    font-size: 45px;
+    color: #f1f1f1;
     font-weight: 600;
     text-decoration: none;
-    position: relative; /* relative because children on absolute */
+    position: relative;
+    /* relative because children on absolute */
 }
 
 .slide-line::before {
-    content: "";  /* always instantiate pseudo elements */
+    content: "";
+    /* always instantiate pseudo elements */
     position: absolute;
-    background-color: #333;
+    background-color: #f1f1f1;
     width: 100%;
     height: 2px;
     bottom: 0;
@@ -58,15 +61,17 @@ a {
 .slide-link {
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
-    color: #333;
+    color: #f1f1f1;
     font-weight: 600;
-    overflow: hidden;    /* to allow hiding the second link */
+    overflow: hidden;
+    /* to allow hiding the second link */
     position: relative;
 }
 
 .slide-link span {
     padding: 10px;
-    display: inline-block;  /* because span is inline element and enable the transition */
+    display: inline-block;
+    /* because span is inline element and enable the transition */
     transition: transform 0.3s ease-out;
 }
 
@@ -80,4 +85,54 @@ a {
 .slide-link:hover span {
     transform: translateX(-100%);
 
+}
+
+
+/* Anim 3 */
+
+.two-lines {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    color: #f1f1f1;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+}
+
+.two-lines::before,
+.two-lines::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #f1f1f1;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.two-lines::before {
+    width: 90%;
+    bottom: 0;
+}
+
+.two-lines::after {
+    width: 60%;
+    bottom: -7px;
+}
+
+.two-lines:hover:before,
+.two-lines:hover:after {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+}
+
+/* delay between line 1 and line 2 */
+.two-lines::before,
+.two-lines:hover:after {
+    transition-delay: 0.2s;
+}
+
+.two-lines:hover:before {
+    transition-delay: 0s;
 }
