@@ -13,6 +13,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+    flex-direction: column;
+}
+
+a {
+    margin-bottom: 50px;
 }
 
 /* ---------------------------------------- */
@@ -44,4 +50,34 @@ body {
 .slide-line:hover::before {
     transform-origin: 0 0;
     transform: scaleX(1);
+}
+
+
+/* anim 2 */
+
+.slide-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    color: #333;
+    font-weight: 600;
+    overflow: hidden;    /* to allow hiding the second link */
+    position: relative;
+}
+
+.slide-link span {
+    padding: 10px;
+    display: inline-block;  /* because span is inline element and enable the transition */
+    transition: transform 0.3s ease-out;
+}
+
+.slide-link span:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 100%;
+}
+
+.slide-link:hover span {
+    transform: translateX(-100%);
+
 }
