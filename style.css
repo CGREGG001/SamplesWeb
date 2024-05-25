@@ -1,0 +1,74 @@
+/* reset */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* align center */
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ------------------------- */
+
+.box {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border-radius: 100px;   /* circle */
+    position: relative;
+}
+
+button {
+    border: none;
+}
+
+.b1 {
+    background-color: powderblue;
+}
+
+.b2 {
+    background-color: blueviolet;
+}
+
+.b3 {
+    background-color: darkslateblue;
+}
+
+.container-lines {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /*to enable action in JS*/
+}
+
+.lines {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+.box .lines:nth-child(1) {
+    top: 0;
+}
+
+.box .lines:nth-child(2) {
+    top: 25px;
+}
+
+.box .lines:nth-child(3) {
+    top: 50px;
+}
